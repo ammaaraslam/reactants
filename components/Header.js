@@ -1,4 +1,5 @@
 import { useSession, signIn, signOut } from "next-auth/react";
+import { PrimaryButton } from "./Buttons";
 const Header = () => {
   const { data: session } = useSession();
 
@@ -13,19 +14,23 @@ const Header = () => {
   };
 
   return (
-    <header className="p-3 w-full h-fit flex items-center justify-between bg-red-500">
-      <div className="p-0 ml-2 ">
-        <span className="text-xl">Reactants</span>
+    <header className="p-3 w-full h-fit flex items-center justify-between bg-background text-text">
+      <div className="p-0 ml-2">
+        <span className="text-2xl font-bold">Reactants</span>
       </div>
       {session && (
-        <a href="#" onClick={handleSignout} className="mr-2">
-          Sign out
-        </a>
+        <PrimaryButton
+          handleOnClick={handleSignout}
+          type="small"
+          buttonText="Sign Out"
+        >
+          Sign Out
+        </PrimaryButton>
       )}
       {!session && (
-        <a href="#" onClick={handleSignin} className="mr-2">
-          Sign in
-        </a>
+        <PrimaryButton handleOnClick={handleSignin} type="small">
+          Sign In
+        </PrimaryButton>
       )}
     </header>
   );
