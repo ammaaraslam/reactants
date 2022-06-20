@@ -6,13 +6,23 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        wiggle: "wiggle 1s ease-in-out infinite",
+      },
+    },
+    fontFamily: {
+      display: ["Bebas Neue", "cursive"],
+      roboto: ["Roboto Slab", "serif"],
+    },
     colors: {
-      primary: "#ff364e",
-      secondary: "#ffde00",
-      tertiary: "#4c57c5",
-      background: "#f7f7f6",
-      text: "#02001d",
+      primary: "#4285f4",
+      secondary: "#06d6a0",
+      tertiary: "#E73668",
+      background: "#FFFFFF",
+      text: "#0A0A0A",
+      textSecondary: "#333333",
+      transparent: "transparent",
     },
   },
   plugins: [],
