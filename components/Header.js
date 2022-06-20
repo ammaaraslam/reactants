@@ -20,11 +20,11 @@ const Header = () => {
       <div className="p-0 ml-2">
         <span className="text-2xl font-bold">Reactants</span>
       </div>
-      <div className="inline-flex font-bold text-text text-xl">
-        <li className="list-none mr-8">
+      <div className="inline-flex font-bold text-text text-xl font-roboto tracking-wider">
+        <li className="list-none mr-8 decoration-2 underline-offset-4 hover:underline hover:text-tertiary decoration-tertiary transition-all duration-200">
           <Link href="/">Contribute</Link>
         </li>
-        <li className="list-none">
+        <li className="list-none decoration-2 underline-offset-4 hover:underline hover:text-tertiary decoration-tertiary transition-all duration-200">
           <Link href="/">About</Link>
         </li>
       </div>
