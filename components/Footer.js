@@ -8,7 +8,7 @@ const Footer = () => {
           <SiTailwindcss className="mt-1 ml-1 mr-1" /> and 💜 by Ammaar Aslam
         </a>
         <div className="">
-          <SiGithub className="text-2xl" />
+          <SiGithub className="text-2xl ml-auto mr-auto" />
         </div>
       </div>
     </div>
