@@ -38,7 +38,11 @@ const Header = () => {
         </PrimaryButton>
       )}
       {!session && (
-        <PrimaryButton handleOnClick={handleSignin} type="small">
+        <PrimaryButton
+          handleOnClick={handleSignin}
+          type="small"
+          textColor="background"
+        >
           Sign In
         </PrimaryButton>
       )}

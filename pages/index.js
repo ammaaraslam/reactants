@@ -1,15 +1,15 @@
 import Head from "next/head";
 import { useSession } from "next-auth/react";
 import Header from "../components/Header";
-import { PrimaryButton } from "../components/Buttons";
+import { PrimaryButton, SecondaryButton } from "../components/Buttons";
 import {
   SiStyledcomponents,
   SiTailwindcss,
   SiCss3,
   SiReact,
 } from "react-icons/si";
+import { FiArrowRight } from "react-icons/fi";
 import Footer from "../components/Footer";
-import { PrimarySpecialText } from "../components/SpecialTexts";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -26,24 +26,20 @@ export default function Home() {
       <main className="w-full h-full bg-background">
         <div className="pt-28 flex">
           <div className="ml-auto mr-auto max-w-5xl text-center">
-            <span className="text-secondary font-extrabold text-xl font-display">
-              open source
-            </span>
             <h1 className="text-text font-extrabold text-9xl font-display tracking-wide">
               Easily Build Custom{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">
-                React Components{" "}
+                React Components
               </span>
             </h1>
-            <p className="text-text opacity-80 font-semibold text-3xl mt-2 max-w-4xl ml-auto mr-auto font-roboto">
-              <PrimarySpecialText textColor="background">
-                Reactants
-              </PrimarySpecialText>{" "}
-              is an open-source platform to build custom ReactJS components
-              without coding.
+            <p className="text-text font-semibold text-3xl mt-2 max-w-4xl ml-auto mr-auto font-roboto">
+              An open-source, no-code platform to create beautiful custom
+              ReactJS UI components
             </p>
             <div className="mt-7">
-              <PrimaryButton type="big">Get Started</PrimaryButton>
+              <SecondaryButton type="big" textColor="background">
+                Get Started <FiArrowRight className="mt-1 ml-2" />
+              </SecondaryButton>
             </div>
           </div>
         </div>
