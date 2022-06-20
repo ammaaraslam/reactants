@@ -3,7 +3,7 @@ export const PrimaryButton = ({ handleOnClick, children, type }) => {
     return (
       <button
         type="button"
-        className="p-2 w-24 bg-primary rounded-xl hover:scale-105 transition-all duration-200 font-bold text-text text-base"
+        className="p-2 w-24 bg-primary rounded-xl hover:scale-105 transition-all duration-200 font-semibold text-text text-base"
         onClick={handleOnClick}
       >
         {children}
@@ -24,7 +24,7 @@ export const PrimaryButton = ({ handleOnClick, children, type }) => {
     return (
       <button
         type="button"
-        className="w-28 p-3 bg-primary"
+        className="p-3 w-fit bg-primary rounded-xl hover:scale-105 transition-all duration-200 font-bold text-text text-xl text-center"
         onClick={handleOnClick}
       >
         {children}
