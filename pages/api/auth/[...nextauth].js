@@ -8,6 +8,9 @@ const options = {
       clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
+  pages: {
+    signIn: "/signup",
+  },
 };
 
 export default (req, res) => NextAuth(req, res, options);
