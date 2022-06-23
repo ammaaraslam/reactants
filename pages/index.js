@@ -23,7 +23,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="w-full h-full bg-background">
+      <main className="w-full h-full bg-background dark:bg-text">
         <div className="pt-28 flex">
           <div className="ml-auto mr-auto max-w-5xl text-center">
             <h1 className="text-text font-extrabold text-9xl font-display tracking-wide">

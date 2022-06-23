@@ -1,4 +1,5 @@
 import { SiGithub, SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import ThemeToggle from "./ThemeToggle";
 const Footer = () => {
   return (
     <div className="p-3 text-text flex">
@@ -10,6 +11,7 @@ const Footer = () => {
         <div className="">
           <SiGithub className="text-2xl ml-auto mr-auto" />
         </div>
+        <ThemeToggle />
       </div>
     </div>
   );
