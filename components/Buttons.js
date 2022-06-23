@@ -14,7 +14,7 @@ export const PrimaryButton = ({ handleOnClick, children, type, textColor }) => {
     return (
       <button
         type="button"
-        className="p-5 w-fit bg-primary rounded-xl inline-flex justify-center items-center hover:scale-105 transition-all duration-200 font-extrabold text-text text-2xl text-center"
+        className="p-5 w-fit bg-primary rounded-xl inline-flex justify-center items-center hover:scale-105 transition-all duration-200 font-extrabold text-darkText text-2xl text-center"
         onClick={handleOnClick}
       >
         {children}
@@ -24,7 +24,7 @@ export const PrimaryButton = ({ handleOnClick, children, type, textColor }) => {
     return (
       <button
         type="button"
-        className="p-3 w-fit bg-primary rounded-xl inline-flex justify-center items-center hover:scale-105 transition-all duration-200 font-bold text-text text-xl text-center"
+        className="p-3 w-fit bg-primary rounded-xl inline-flex justify-center items-center hover:scale-105 transition-all duration-200 font-bold text-darkText text-xl text-center"
         onClick={handleOnClick}
       >
         {children}

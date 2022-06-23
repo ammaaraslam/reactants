@@ -16,11 +16,11 @@ const Header = () => {
   };
 
   return (
-    <header className="p-3 w-full h-fit flex items-center justify-between bg-background text-text">
+    <header className="fixed p-3 w-full h-fit flex items-center justify-between bg-background dark:bg-darkBackground bg-opacity-80 dark:bg-opacity-80 backdrop-blur-lg backdrop-saturate-150 text-darkText dark:text-text ">
       <div className="p-0 ml-2">
         <span className="text-2xl font-bold">Reactants</span>
       </div>
-      <div className="inline-flex font-bold text-text text-xl font-roboto tracking-wider">
+      <div className="inline-flex font-bold text-xl font-roboto tracking-wider">
         <li className="list-none mr-8 decoration-2 underline-offset-4 hover:underline hover:text-tertiary decoration-tertiary transition-all duration-200">
           <Link href="/">Contribute</Link>
         </li>

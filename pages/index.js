@@ -26,13 +26,13 @@ export default function Home() {
       <main className="w-full h-full bg-background dark:bg-text">
         <div className="pt-28 flex">
           <div className="ml-auto mr-auto max-w-5xl text-center">
-            <h1 className="text-text font-extrabold text-9xl font-display tracking-wide">
+            <h1 className="text-darkText font-extrabold text-9xl font-display tracking-wide">
               Easily Build Custom{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">
                 React Components
               </span>
             </h1>
-            <p className="text-text font-semibold text-3xl mt-2 max-w-4xl ml-auto mr-auto font-roboto">
+            <p className="text-darkText font-semibold text-3xl mt-2 max-w-4xl ml-auto mr-auto font-roboto">
               An open-source, no-code platform to create beautiful custom
               ReactJS UI components
             </p>
@@ -43,7 +43,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="w-full pl-6 pr-6 mt-12 inline-flex text-center justify-center items-center text-text">
+        <div className="w-full pl-6 pr-6 mt-12 inline-flex text-center justify-center items-center text-darkText">
           <SiStyledcomponents className="mr-36 text-7xl opacity-70 hover:opacity-100 hover:text-styledComponents" />
           <SiTailwindcss className="mr-36 text-7xl opacity-70 hover:opacity-100 hover:text-tailwind" />
           <SiReact className="mr-36 text-7xl opacity-70 hover:opacity-100 hover:text-react" />
@@ -62,7 +62,7 @@ export default function Home() {
               <h2 className="text-primary text-6xl tracking-wider font-extrabold font-display">
                 Choose from Pre-built Component Templates
               </h2>
-              <p className="text-text text-2xl mt-1 font-semibold font-roboto">
+              <p className="text-darkText text-2xl mt-1 font-semibold font-roboto">
                 Kick start your component with pre-built components like
                 Buttons, Cards, Texts or create and save your own templates
               </p>
@@ -75,7 +75,7 @@ export default function Home() {
               <h2 className="text-secondary text-6xl tracking-wider font-extrabold font-display">
                 Build Codeless Components
               </h2>
-              <p className="text-text text-2xl font-semibold">
+              <p className="text-darkText text-2xl font-semibold">
                 Create your preferred component with an easy-to-use editor,
                 without writing a single line of code.
               </p>
@@ -90,7 +90,7 @@ export default function Home() {
               <h2 className="text-tertiary text-6xl tracking-wider font-extrabold font-display">
                 Use Your Component The Way You Want
               </h2>
-              <p className="text-text text-2xl font-semibold">
+              <p className="text-darkText text-2xl font-semibold">
                 Copy the component's style to match with the rest of your React
                 app's codebase. Choose between CSS, Styled-Components or
                 TailwindCSS.
