@@ -18,6 +18,10 @@ module.exports = {
         text: "#0A0A0A",
         textSecondary: "#333333",
         transparent: "transparent",
+        styledComponents: "#d57aba",
+        tailwind: "#38bdf8",
+        react: "#61dafb",
+        css: "#2862e9",
       },
     },
     fontFamily: {

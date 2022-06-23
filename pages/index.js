@@ -44,20 +44,25 @@ export default function Home() {
           </div>
         </div>
         <div className="w-full pl-6 pr-6 mt-12 inline-flex text-center justify-center items-center text-text">
-          <SiStyledcomponents className="mr-24 text-6xl" />
-          <SiTailwindcss className="mr-24 text-6xl" />
-          <SiReact className="mr-24 text-6xl" />
-          <SiCss3 className="text-6xl" />
+          <SiStyledcomponents className="mr-36 text-7xl opacity-70 hover:opacity-100 hover:text-styledComponents" />
+          <SiTailwindcss className="mr-36 text-7xl opacity-70 hover:opacity-100 hover:text-tailwind" />
+          <SiReact className="mr-36 text-7xl opacity-70 hover:opacity-100 hover:text-react" />
+          <SiCss3 className="text-7xl opacity-70 hover:opacity-100 hover:text-css" />
         </div>
-        <div className="w-4/5 h-96 border-tertiary border-4 mt-8 ml-auto mr-auto" />
+        <div className="w-fit h-fit border-tertiary border-4 mt-8 ml-auto mr-auto">
+          <img
+            className="w-full h-full"
+            src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+          />
+        </div>
         <div className="w-full pl-4 pr-4 mt-28">
           <div className="flex">
             <div className="w-1/2 h-80 bg-primary"></div>
-            <div className="ml-24 max-w-xl">
-              <h2 className="text-primary text-4xl font-extrabold">
+            <div className="ml-20 max-w-xl">
+              <h2 className="text-primary text-6xl tracking-wider font-extrabold font-display">
                 Choose from Pre-built Component Templates
               </h2>
-              <p className="text-text text-2xl font-semibold">
+              <p className="text-text text-2xl mt-1 font-semibold font-roboto">
                 Kick start your component with pre-built components like
                 Buttons, Cards, Texts or create and save your own templates
               </p>
@@ -66,8 +71,8 @@ export default function Home() {
         </div>
         <div className="w-full pl-4 pr-4 mt-24">
           <div className="flex">
-            <div className="mr-24 max-w-xl">
-              <h2 className="text-secondary text-4xl font-extrabold">
+            <div className="mr-36 max-w-xl">
+              <h2 className="text-secondary text-6xl tracking-wider font-extrabold font-display">
                 Build Codeless Components
               </h2>
               <p className="text-text text-2xl font-semibold">
@@ -82,7 +87,7 @@ export default function Home() {
           <div className="flex">
             <div className="w-1/2 h-80 bg-tertiary"></div>
             <div className="ml-24 max-w-xl">
-              <h2 className="text-tertiary text-4xl font-extrabold">
+              <h2 className="text-tertiary text-6xl tracking-wider font-extrabold font-display">
                 Use Your Component The Way You Want
               </h2>
               <p className="text-text text-2xl font-semibold">
