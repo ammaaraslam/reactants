@@ -1,4 +1,6 @@
 import Head from "next/head";
+import SideBar from "../components/editor/SideBar";
+import TopBar from "../components/editor/TopBar";
 
 export default function Editor() {
   return (
@@ -8,7 +10,10 @@ export default function Editor() {
         <meta name="description" content="Editor" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="w-full h-full bg-background dark:bg-darkBackground"></main>
+      <main className="w-full h-screen bg-background dark:bg-darkBackground">
+        <TopBar />
+        <SideBar />
+      </main>
     </div>
   );
 }
