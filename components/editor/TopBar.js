@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { PrimaryOutlineButton } from "../Buttons";
+import GetCode from "./GetCode";
 
 const TopBar = () => {
   return (
@@ -7,7 +9,11 @@ const TopBar = () => {
         <Link href="/">Logo</Link>
       </div>
       <div className="text-darkText dark:text-text">Untitled</div>
-      <div className="mr-8">Save</div>
+      <div className="mr-8">
+        <PrimaryOutlineButton type="small" textColor="background">
+          Save
+        </PrimaryOutlineButton>
+      </div>
     </div>
   );
 };

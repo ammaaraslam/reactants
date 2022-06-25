@@ -8,6 +8,7 @@ import ContentSizeSettings from "./settings/ContentSizeSettings";
 import Popout from "./Popout";
 import ComponentColorSettings from "./settings/ComponentColor";
 import ComponentContentColorSettings from "./settings/ComponentContentColor";
+import GetCode from "./GetCode";
 
 const SideBar = ({ props }) => {
   const [sizeSettings, showSizeSettings] = useState(false);
@@ -94,6 +95,7 @@ const SideBar = ({ props }) => {
         )}
       </div>
       <div className="absolute bottom-5 flex flex-col">
+        <GetCode props={props} />
         <SideBarButton>
           <BiExit className="rotate-180" />
         </SideBarButton>

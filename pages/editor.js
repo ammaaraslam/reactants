@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import Canvas from "../components/editor/Canvas";
+import GetCode from "../components/editor/GetCode";
 import SideBar from "../components/editor/SideBar";
 import TopBar from "../components/editor/TopBar";
 

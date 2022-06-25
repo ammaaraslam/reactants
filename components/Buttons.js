@@ -83,7 +83,7 @@ export const PrimaryOutlineButton = ({
     return (
       <button
         type="button"
-        className={`p-2 w-24 bg-transparent border-2 border-primary inline-flex justify-center items-center hover:bg-primary transition-all duration-200 font-roboto font-bold text-primary hover:text-background hover:dark:text-darkBackground text-md text-center`}
+        className={`p-1 w-24 bg-transparent border-2 border-primary inline-flex justify-center items-center hover:bg-primary transition-all duration-200 font-roboto font-bold text-primary hover:text-background hover:dark:text-darkBackground text-md text-center`}
         onClick={handleOnClick}
       >
         {children}
