@@ -1,15 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { VscCode } from "react-icons/vsc";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
+import { IoMdClose } from "react-icons/io";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-
-const code = `const GetCode = () => {
-    return (
-        <div></div>
-    )
-}
-`;
 
 const GetCode = ({ props }) => {
   const [codeWidget, showCodeWidget] = useState(false);
@@ -48,6 +42,14 @@ const GetCode = ({ props }) => {
 export default GetCode;
 
 const CodeWidget = ({ props }) => {
+  const [codeInlineType, setCodeInlineType] = useState(true);
+  const [codeTailwindType, setCodeTailwindType] = useState(false);
+  const [codeSCType, setCodeSCType] = useState(false);
+
+  const togglingCodeInlineType = () => setCodeInlineType(true);
+  const togglingCodeTailwindType = () => setCodeTailwindType(!codeTailwindType);
+  const togglingCodeSCType = () => setCodeSCType(!codeSCType);
+
   const InlineCodeOutput = `import React from 'react'
     export const GetCode = () => {
         return (
@@ -71,30 +73,148 @@ const CodeWidget = ({ props }) => {
           );
     }
     `;
+  const TailwindCodeOutput = `tailwind`;
+  const ScCodeOutput = `styled components`;
+  const ref = useRef();
+  // Detect Outside Click
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      if (
+        [codeInlineType, codeTailwindType, codeSCType] &&
+        ref.current &&
+        !ref.current.contains(e.target)
+      ) {
+        // setBgOpen(false);
+        // setCBgOpen(false);
+        setCodeInlineType(false);
+        setCodeTailwindType(false);
+        setCodeSCType(false);
+      }
+    };
+    document.addEventListener("mousedown", checkIfClickedOutside);
+    return () => {
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [codeInlineType, codeTailwindType, codeSCType]);
+
   return (
     <div className="p-0 w-2/5 h-screen bg-background dark:bg-darkBackground fixed top-14 right-0 shadow-md rounded-md">
-      <button
+      {/* <button
         type="button"
         onClick={(e) => {
           e.preventDefault();
           navigator.clipboard.writeText(InlineCodeOutput);
         }}
-        className="absolute right-5 mt-5 p-2 bg-darkBackground dark:bg-background rounded-md text-2xl text-center text-primary hover:bg-primary dark:hover:bg-primary hover:rounded-lg hover:text-darkBackground dark:hover:text-background transition-all ease-in-out duration-150"
+        className="absolute mt-5 right-5 p-2 bg-darkBackground dark:bg-background rounded-md text-2xl text-center text-secondary hover:bg-secondary dark:hover:bg-secondary hover:rounded-lg hover:text-darkBackground dark:hover:text-background transition-all ease-in-out duration-150"
       >
-        <HiOutlineClipboardCopy />
-      </button>
-      <SyntaxHighlighter
-        language="jsx"
-        style={coldarkDark}
-        showLineNumbers="true"
-        customStyle={{
-          backgroundColor: "#212738",
-          marginTop: "60px",
-        }}
-        wrapLongLines="true"
-      >
-        {InlineCodeOutput}
-      </SyntaxHighlighter>
+        <IoMdClose />
+      </button> */}
+      <div className="border-l-4 border-secondary h-full mt-2">
+        <div className="border-b-2 border-t-2  border-secondary w-full bg-darkBackground">
+          <button
+            type="button"
+            onClick={togglingCodeInlineType}
+            className="text-center text-lg text-background border-r-2 border-secondary pt-1 pb-1 pl-2 pr-2 hover:bg-secondary hover:bg-opacity-50 focus:bg-secondary focus:bg-opacity-90 transition-all duration-150"
+          >
+            Inline CSS
+          </button>
+          <button
+            type="button"
+            onClick={togglingCodeTailwindType}
+            className="text-center text-lg text-background border-r-2 border-secondary pt-1 pb-1 pl-2 pr-2 hover:bg-secondary hover:bg-opacity-50 focus:bg-secondary focus:bg-opacity-90 transition-all duration-150"
+          >
+            Tailwind CSS
+          </button>
+          <button
+            type="button"
+            onClick={togglingCodeSCType}
+            className="text-center text-lg text-background border-r-2 border-secondary pt-1 pb-1 pl-2 pr-2 hover:bg-secondary hover:bg-opacity-50 focus:bg-secondary focus:bg-opacity-90 transition-all duration-150"
+          >
+            Styled Components
+          </button>
+        </div>
+        {codeInlineType && (
+          <div ref={ref}>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                navigator.clipboard.writeText(InlineCodeOutput);
+              }}
+              className="absolute right-4 mt-3 p-2 bg-background dark:bg-darkBackground rounded-md text-2xl text-center text-secondary hover:bg-secondary dark:hover:bg-secondary hover:rounded-lg hover:text-darkBackground dark:hover:text-background transition-all ease-in-out duration-150"
+            >
+              <HiOutlineClipboardCopy />
+            </button>
+
+            <SyntaxHighlighter
+              language="jsx"
+              style={coldarkDark}
+              showLineNumbers="true"
+              customStyle={{
+                backgroundColor: "#212738",
+                marginTop: "0",
+              }}
+              wrapLongLines="true"
+            >
+              {InlineCodeOutput}
+            </SyntaxHighlighter>
+          </div>
+        )}
+        {codeTailwindType && (
+          <div ref={ref}>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                navigator.clipboard.writeText(TailwindCodeOutput);
+              }}
+              className="absolute right-4 mt-3 p-2 bg-background dark:bg-darkBackground rounded-md text-2xl text-center text-secondary hover:bg-secondary dark:hover:bg-secondary hover:rounded-lg hover:text-darkBackground dark:hover:text-background transition-all ease-in-out duration-150"
+            >
+              <HiOutlineClipboardCopy />
+            </button>
+
+            <SyntaxHighlighter
+              language="jsx"
+              style={coldarkDark}
+              showLineNumbers="true"
+              customStyle={{
+                backgroundColor: "#212738",
+                marginTop: "0",
+              }}
+              wrapLongLines="true"
+            >
+              {TailwindCodeOutput}
+            </SyntaxHighlighter>
+          </div>
+        )}
+        {codeSCType && (
+          <div ref={ref}>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                navigator.clipboard.writeText(ScCodeOutput);
+              }}
+              className="absolute right-4 mt-3 p-2 bg-background dark:bg-darkBackground rounded-md text-2xl text-center text-secondary hover:bg-secondary dark:hover:bg-secondary hover:rounded-lg hover:text-darkBackground dark:hover:text-background transition-all ease-in-out duration-150"
+            >
+              <HiOutlineClipboardCopy />
+            </button>
+
+            <SyntaxHighlighter
+              language="jsx"
+              style={coldarkDark}
+              showLineNumbers="true"
+              customStyle={{
+                backgroundColor: "#212738",
+                marginTop: "0",
+              }}
+              wrapLongLines="true"
+            >
+              {ScCodeOutput}
+            </SyntaxHighlighter>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
