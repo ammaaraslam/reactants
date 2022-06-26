@@ -15,6 +15,12 @@ const Component = ({ props }) => {
         lineHeight: `${props.lineHeight}`,
         backgroundColor: `${props.componentColor}`,
         color: `${props.componentContentColor}`,
+        borderWidth: `${props.borderThickness}px`,
+        borderStyle: `${props.borderStyle}`,
+        borderTopLeftRadius: `${props.borderTopLeft}px`,
+        borderTopRightRadius: `${props.borderTopRight}px`,
+        borderBottomLeftRadius: `${props.borderBottomLeft}px`,
+        borderBottomRightRadius: `${props.borderBottomRight}px`,
       }}
     >
       Component

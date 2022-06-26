@@ -1,4 +1,4 @@
-import { TbResize } from "react-icons/tb";
+import { TbResize, TbBorderAll } from "react-icons/tb";
 import { IoTextSharp } from "react-icons/io5";
 import { AiOutlineBgColors, AiOutlineFontColors } from "react-icons/ai";
 import { BiExit } from "react-icons/bi";
@@ -9,6 +9,7 @@ import Popout from "./Popout";
 import ComponentColorSettings from "./settings/ComponentColor";
 import ComponentContentColorSettings from "./settings/ComponentContentColor";
 import GetCode from "./GetCode";
+import BorderSettings from "./settings/BorderSettings";
 
 const SideBar = ({ props }) => {
   const [sizeSettings, showSizeSettings] = useState(false);
@@ -16,8 +17,11 @@ const SideBar = ({ props }) => {
   const [componentColorSettings, showComponentColorSettings] = useState(false);
   const [componentContentColorSettings, showComponentContentColorSettings] =
     useState(false);
+  const [borderSettings, showBorderSettings] = useState(false);
 
   const togglingSizeSettings = () => showSizeSettings(!sizeSettings);
+  const togglingBorderSettings = () => showBorderSettings(!borderSettings);
+
   const togglingContentSizeSettings = () =>
     showContentSizeSettings(!contentSizeSettings);
   const togglingComponentColorSettings = () =>
@@ -35,6 +39,7 @@ const SideBar = ({ props }) => {
           contentSizeSettings,
           componentColorSettings,
           componentContentColorSettings,
+          borderSettings,
         ] &&
         ref.current &&
         !ref.current.contains(e.target)
@@ -56,6 +61,7 @@ const SideBar = ({ props }) => {
     contentSizeSettings,
     componentColorSettings,
     componentContentColorSettings,
+    borderSettings,
   ]);
 
   return (
@@ -91,6 +97,14 @@ const SideBar = ({ props }) => {
         {componentContentColorSettings && (
           <Popout useRef={ref}>
             <ComponentContentColorSettings props={props} />
+          </Popout>
+        )}
+        <SideBarButton handleOnClick={togglingBorderSettings}>
+          <TbBorderAll />
+        </SideBarButton>
+        {borderSettings && (
+          <Popout useRef={ref}>
+            <BorderSettings props={props} />
           </Popout>
         )}
       </div>

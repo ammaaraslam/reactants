@@ -2,8 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import { VscCode } from "react-icons/vsc";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
+// import SyntaxHighlighter from "react-syntax-highlighter";
+// import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const GetCode = ({ props }) => {
   const [codeWidget, showCodeWidget] = useState(false);
@@ -146,7 +146,7 @@ const CodeWidget = ({ props }) => {
               <HiOutlineClipboardCopy />
             </button>
 
-            <SyntaxHighlighter
+            {/* <SyntaxHighlighter
               language="jsx"
               style={nightOwl}
               showLineNumbers="true"
@@ -157,7 +157,7 @@ const CodeWidget = ({ props }) => {
               wrapLongLines="true"
             >
               {InlineCodeOutput}
-            </SyntaxHighlighter>
+            </SyntaxHighlighter> */}
           </div>
         )}
         {codeTailwindType && (
@@ -173,7 +173,7 @@ const CodeWidget = ({ props }) => {
               <HiOutlineClipboardCopy />
             </button>
 
-            <SyntaxHighlighter
+            {/* <SyntaxHighlighter
               language="jsx"
               style={nightOwl}
               showLineNumbers="true"
@@ -184,7 +184,7 @@ const CodeWidget = ({ props }) => {
               wrapLongLines="true"
             >
               {TailwindCodeOutput}
-            </SyntaxHighlighter>
+            </SyntaxHighlighter> */}
           </div>
         )}
         {codeSCType && (
@@ -200,7 +200,7 @@ const CodeWidget = ({ props }) => {
               <HiOutlineClipboardCopy />
             </button>
 
-            <SyntaxHighlighter
+            {/* <SyntaxHighlighter
               language="jsx"
               style={nightOwl}
               showLineNumbers="true"
@@ -211,7 +211,7 @@ const CodeWidget = ({ props }) => {
               wrapLongLines="true"
             >
               {ScCodeOutput}
-            </SyntaxHighlighter>
+            </SyntaxHighlighter> */}
           </div>
         )}
       </div>

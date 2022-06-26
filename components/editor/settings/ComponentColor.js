@@ -20,7 +20,7 @@ const colors = [
 
 const ComponentColorSettings = ({ props }) => {
   return (
-    <div className="text-background dark:text-darkBackground">
+    <div className="text-background dark:text-darkBackground w-72">
       <div>
         <h2 className="text-primary font-bold text-lg">
           Select Background Color

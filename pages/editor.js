@@ -16,6 +16,12 @@ export default function Editor() {
   const [lineHeight, setLineHeight] = useState("1.2");
   const [componentColor, setComponentColor] = useState("#f97068");
   const [componentContentColor, setComponentContentColor] = useState("#F4F6FF");
+  const [borderStyle, setBorderStyle] = useState("Solid");
+  const [borderThickness, setBorderThickness] = useState("2");
+  const [borderTopLeft, setBorderTopLeft] = useState("10");
+  const [borderTopRight, setBorderTopRight] = useState("10");
+  const [borderBottomLeft, setBorderBottomLeft] = useState("10");
+  const [borderBottomRight, setBorderBottomRight] = useState("10");
 
   const propsForSettings = {
     width,
@@ -38,6 +44,18 @@ export default function Editor() {
     setComponentColor,
     componentContentColor,
     setComponentContentColor,
+    borderStyle,
+    setBorderStyle,
+    borderThickness,
+    setBorderThickness,
+    borderTopLeft,
+    setBorderTopLeft,
+    borderTopRight,
+    setBorderTopRight,
+    borderBottomLeft,
+    setBorderBottomLeft,
+    borderBottomRight,
+    setBorderBottomRight,
   };
 
   return (
