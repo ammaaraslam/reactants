@@ -2,8 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import { VscCode } from "react-icons/vsc";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const GetCode = ({ props }) => {
   const [codeWidget, showCodeWidget] = useState(false);
@@ -148,7 +148,7 @@ const CodeWidget = ({ props }) => {
 
             <SyntaxHighlighter
               language="jsx"
-              style={coldarkDark}
+              style={nightOwl}
               showLineNumbers="true"
               customStyle={{
                 backgroundColor: "#212738",
@@ -175,7 +175,7 @@ const CodeWidget = ({ props }) => {
 
             <SyntaxHighlighter
               language="jsx"
-              style={coldarkDark}
+              style={nightOwl}
               showLineNumbers="true"
               customStyle={{
                 backgroundColor: "#212738",
@@ -202,7 +202,7 @@ const CodeWidget = ({ props }) => {
 
             <SyntaxHighlighter
               language="jsx"
-              style={coldarkDark}
+              style={nightOwl}
               showLineNumbers="true"
               customStyle={{
                 backgroundColor: "#212738",
