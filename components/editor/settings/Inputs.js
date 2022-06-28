@@ -2,7 +2,13 @@ import React from "react";
 
 const settings = ["Width", "Height", "Top", "Bottom", "Left", "Right"];
 
-const IncrementalInput = ({ handleOnChange, label, max, min }) => {
+const IncrementalInput = ({
+  handleOnChange,
+  label,
+  max,
+  min,
+  defaultValue,
+}) => {
   return (
     <form
       className="p-0"
@@ -15,6 +21,7 @@ const IncrementalInput = ({ handleOnChange, label, max, min }) => {
         type="number"
         min={min}
         max={max}
+        value={defaultValue}
         onChange={handleOnChange}
         className="ml-2 w-12 h-6 rounded-sm bg-secondary text-darkBackground dark:text-background text-right"
       />

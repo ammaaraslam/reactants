@@ -11,6 +11,7 @@ const SizeSettings = ({ props }) => {
             min="1"
             max="1200"
             label="Width"
+            defaultValue={props.width}
             handleOnChange={(e) => {
               props.setWidth(e.target.value);
             }}
@@ -19,6 +20,7 @@ const SizeSettings = ({ props }) => {
             label="Height"
             min="1"
             max="750"
+            defaultValue={props.height}
             handleOnChange={(e) => {
               props.setHeight(e.target.value);
             }}
@@ -32,6 +34,7 @@ const SizeSettings = ({ props }) => {
           <IncrementalInput
             min="0"
             max="100"
+            defaultValue={props.paddingT}
             handleOnChange={(e) => {
               props.setPaddingT(e.target.value);
             }}
@@ -40,6 +43,7 @@ const SizeSettings = ({ props }) => {
           <IncrementalInput
             min="0"
             max="100"
+            defaultValue={props.paddingL}
             handleOnChange={(e) => {
               props.setPaddingL(e.target.value);
             }}
@@ -50,6 +54,7 @@ const SizeSettings = ({ props }) => {
           <IncrementalInput
             min="0"
             max="100"
+            defaultValue={props.paddingB}
             handleOnChange={(e) => {
               props.setPaddingB(e.target.value);
             }}
@@ -58,6 +63,7 @@ const SizeSettings = ({ props }) => {
           <IncrementalInput
             min="0"
             max="100"
+            defaultValue={props.paddingR}
             handleOnChange={(e) => {
               props.setPaddingR(e.target.value);
             }}
