@@ -33,6 +33,7 @@ const BorderSettings = ({ props }) => {
             min="1"
             max="1200"
             label="Thickness"
+            defaultValue={props.borderThickness}
             handleOnChange={(e) => {
               props.setBorderThickness(e.target.value);
             }}
@@ -52,6 +53,7 @@ const BorderSettings = ({ props }) => {
         <div className="flex justify-between mt-2">
           <IncrementalInput
             min="0"
+            defaultValue={props.borderTopLeft}
             max="100"
             handleOnChange={(e) => {
               props.setBorderTopLeft(e.target.value);
@@ -61,6 +63,7 @@ const BorderSettings = ({ props }) => {
           <IncrementalInput
             min="0"
             max="100"
+            defaultValue={props.borderTopRight}
             handleOnChange={(e) => {
               props.setBorderTopRight(e.target.value);
             }}
@@ -71,6 +74,7 @@ const BorderSettings = ({ props }) => {
           <IncrementalInput
             min="0"
             max="100"
+            defaultValue={props.borderBottomLeft}
             handleOnChange={(e) => {
               props.setBorderBottomLeft(e.target.value);
             }}
@@ -79,6 +83,7 @@ const BorderSettings = ({ props }) => {
           <IncrementalInput
             min="0"
             max="100"
+            defaultValue={props.borderBottomRight}
             handleOnChange={(e) => {
               props.setBorderBottomRight(e.target.value);
             }}
