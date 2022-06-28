@@ -1,7 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
+  plugins: [require("tailwind-scrollbar")],
+
   variants: {
+    scrollbar: ["dark", "rounded"],
     extend: {
       backgroundImage: ["dark"],
     },
@@ -52,5 +55,4 @@ module.exports = {
       roboto: ["SF UI Display", "sans-serif"],
     },
   },
-  plugins: [],
 };
