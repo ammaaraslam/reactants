@@ -4,7 +4,9 @@ const SizeSettings = ({ props }) => {
   return (
     <div className="text-background dark:text-darkBackground w-60">
       <div>
-        <h2 className="text-primary font-bold text-lg">Size</h2>
+        <h2 className="text-darkBackground dark:text-background font-bold text-lg">
+          Size
+        </h2>
         <hr />
         <div className="flex justify-between mt-2">
           <IncrementalInput

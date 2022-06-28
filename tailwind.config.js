@@ -1,10 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
-  plugins: [require("tailwind-scrollbar")],
 
   variants: {
-    scrollbar: ["dark", "rounded"],
     extend: {
       backgroundImage: ["dark"],
     },
@@ -32,9 +30,9 @@ module.exports = {
         secondaryShadow: "-10px 10px #a90f06",
       },
       colors: {
-        primary: "#5271ff",
+        primary: "#0061ff",
         primaryDark: "#",
-        secondary: "#f97068",
+        secondary: "#60efff",
         secondaryDark: "#a90f06",
         tertiary: "#E73668",
         background: "#F4F6FF",

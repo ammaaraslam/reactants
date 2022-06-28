@@ -1,114 +1,28 @@
-export const PrimaryButton = ({ handleOnClick, children, type, textColor }) => {
-  if (type == "small") {
-    return (
-      <button
-        type="button"
-        className={`p-2 w-24 bg-primary inline-flex justify-center items-center hover:translate-x-1 hover:-translate-y-1 hover:shadow-primaryShadow transition-all duration-200 font-roboto font-extrabold text-text dark:text-darkBackground text-xl text-center`}
-        onClick={handleOnClick}
-      >
-        {children}
-      </button>
-    );
-  }
-  if (type == "big") {
-    return (
-      <button
-        type="button"
-        className="p-5 w-fit bg-primary rounded-xl inline-flex justify-center items-center hover:scale-105 transition-all duration-200 font-extrabold text-darkText text-2xl text-center"
-        onClick={handleOnClick}
-      >
-        {children}
-      </button>
-    );
-  } else {
-    return (
-      <button
-        type="button"
-        className="p-3 w-fit bg-primary rounded-xl inline-flex justify-center items-center hover:scale-105 transition-all duration-200 font-bold text-darkText text-xl text-center"
-        onClick={handleOnClick}
-      >
-        {children}
-      </button>
-    );
-  }
+export const BigPrimaryButton = ({ handleOnClick, children }) => {
+  return (
+    <button
+      type="button"
+      className="group pt-5 pb-5 pl-10 pr-10 w-fit bg-primary rounded-full inline-flex justify-center items-center transition-all duration-400 font-roboto font-extrabold text-background dark:text-darkBackground text-2xl text-center "
+      onClick={handleOnClick}
+    >
+      {children}
+    </button>
+  );
 };
 
-export const SecondaryButton = ({
+export const SmallSecondaryButton = ({
   handleOnClick,
   children,
   type,
   textColor,
 }) => {
-  if (type == "small") {
-    return (
-      <button
-        type="button"
-        className={`p-2 w-fit bg-secondary rounded-xl inline-flex justify-center items-center hover:scale-105 transition-all duration-200 font-roboto font-bold text-${textColor} text-xl text-center`}
-        onClick={handleOnClick}
-      >
-        {children}
-      </button>
-    );
-  }
-  if (type == "big") {
-    return (
-      <button
-        type="button"
-        className={`p-4 w-fit bg-secondary text-background dark:text-darkBackground  inline-flex justify-center items-center hover:translate-x-1 hover:-translate-y-1 hover:shadow-secondaryShadow hover:text-secondaryDark transition-all duration-200 font-roboto font-extrabold  text-3xl text-center`}
-        onClick={handleOnClick}
-      >
-        {children}
-      </button>
-    );
-  } else {
-    return (
-      <button
-        type="button"
-        className={`p-4 w-fit bg-secondary rounded-xl inline-flex justify-center items-center hover:scale-105 transition-all duration-200 font-roboto font-extrabold text-${textColor} text-2xl text-center`}
-        onClick={handleOnClick}
-      >
-        {children}
-      </button>
-    );
-  }
-};
-
-export const PrimaryOutlineButton = ({
-  handleOnClick,
-  children,
-  type,
-  textColor,
-}) => {
-  if (type == "small") {
-    return (
-      <button
-        type="button"
-        className={`p-1 w-24 bg-transparent border-2 border-primary inline-flex justify-center items-center hover:bg-primary transition-all duration-200 font-roboto font-bold text-primary hover:text-background hover:dark:text-darkBackground text-md text-center`}
-        onClick={handleOnClick}
-      >
-        {children}
-      </button>
-    );
-  }
-  if (type == "big") {
-    return (
-      <button
-        type="button"
-        className="p-5 w-fit bg-transparent rounded-xl inline-flex justify-center items-center hover:scale-105 transition-all duration-200 font-extrabold text-darkText text-2xl text-center"
-        onClick={handleOnClick}
-      >
-        {children}
-      </button>
-    );
-  } else {
-    return (
-      <button
-        type="button"
-        className="p-3 w-fit bg-transparent border-1 border-primary rounded-xl inline-flex justify-center items-center hover:scale-105 transition-all duration-200 font-bold text-darkText text-xl text-center"
-        onClick={handleOnClick}
-      >
-        {children}
-      </button>
-    );
-  }
+  return (
+    <button
+      type="button"
+      className="pt-1 pb-1 pl-6 pr-6 w-fit border-2 border-darkBackground dark:border-background text-darkBackground dark:text-background rounded-full inline-flex justify-center items-center hover:bg-darkBackground dark:hover:bg-background hover:text-background dark:hover:text-darkBackground transition-all duration-200 font-roboto font-bold  text-lg text-center"
+      onClick={handleOnClick}
+    >
+      {children}
+    </button>
+  );
 };

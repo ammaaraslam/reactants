@@ -1,5 +1,5 @@
 import { useSession, signIn, signOut } from "next-auth/react";
-import { PrimaryOutlineButton } from "./Buttons";
+import { SmallSecondaryButton } from "./Buttons";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
@@ -43,18 +43,18 @@ const Header = () => {
           </div>
           <div className="mr-8">
             {session && (
-              <PrimaryOutlineButton handleOnClick={handleSignout} type="small">
+              <SmallSecondaryButton handleOnClick={handleSignout} type="small">
                 Sign Out
-              </PrimaryOutlineButton>
+              </SmallSecondaryButton>
             )}
             {!session && (
-              <PrimaryOutlineButton
+              <SmallSecondaryButton
                 handleOnClick={handleSignin}
                 type="small"
                 textColor="background"
               >
                 Sign In
-              </PrimaryOutlineButton>
+              </SmallSecondaryButton>
             )}
           </div>
         </header>
@@ -65,27 +65,27 @@ const Header = () => {
             <span className="text-2xl font-bold">Reactants</span>
           </div>
           <div className="inline-flex font-normal text-xl font-roboto tracking-wider">
-            <li className="list-none mr-8 text-greyText hover:text-darkText dark:hover:text-text transition-all duration-200">
+            <li className="list-none mr-8 text-darkBackground dark:text-background opacity-80 hover:opacity-100 transition-all duration-200">
               <Link href="/">Contribute</Link>
             </li>
-            <li className="list-none text-greyText hover:text-darkText dark:hover:text-text transition-all duration-200">
+            <li className="list-none mr-8 text-darkBackground dark:text-background opacity-80 hover:opacity-100 transition-all duration-200">
               <Link href="/">About</Link>
             </li>
           </div>
           <div className="mr-8">
             {session && (
-              <PrimaryOutlineButton handleOnClick={handleSignout} type="small">
+              <SmallSecondaryButton handleOnClick={handleSignout} type="small">
                 Sign Out
-              </PrimaryOutlineButton>
+              </SmallSecondaryButton>
             )}
             {!session && (
-              <PrimaryOutlineButton
+              <SmallSecondaryButton
                 handleOnClick={handleSignin}
                 type="small"
                 textColor="background"
               >
                 Sign In
-              </PrimaryOutlineButton>
+              </SmallSecondaryButton>
             )}
           </div>
         </header>

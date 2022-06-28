@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useSession } from "next-auth/react";
 import Header from "../components/Header";
-import { PrimaryButton, SecondaryButton } from "../components/Buttons";
+import { BigPrimaryButton } from "../components/Buttons";
 import {
   SiStyledcomponents,
   SiTailwindcss,
@@ -26,18 +26,21 @@ export default function Home() {
       <main className="w-full h-full bg-background dark:bg-darkBackground">
         <div className="pt-44 flex">
           <div className="ml-auto mr-auto max-w-4xl text-center">
-            <h1 className="text-textDark dark:text-text font-semibold text-8xl tracking-wide font-display">
-              Easily Build Custom{" "}
-              <span className="text-primary">React Components</span>
+            <h1 className="text-textDark dark:text-text font-bold text-8xl tracking-wider font-display">
+              Build your React components{" "}
+              <span className="italic font-semibold text-transparent  bg-clip-text bg-gradient-to-r from-[#0061ff] to-[#60efff]">
+                /*without code*/
+              </span>
             </h1>
             <p className="text-darkText dark:text-text font-semibold text-3xl mt-2 max-w-3xl ml-auto mr-auto font-roboto">
               An open-source, no-code platform to create beautiful custom
               ReactJS UI components
             </p>
             <div className="mt-7">
-              <SecondaryButton type="big" textColor="background">
-                Get Started <FiArrowRight className="mt-1 ml-2" />
-              </SecondaryButton>
+              <BigPrimaryButton type="big" textColor="background">
+                Get Started{" "}
+                <FiArrowRight className="mt-1 ml-2 group-hover:ml-4 transition-all duration-200" />
+              </BigPrimaryButton>
             </div>
           </div>
         </div>
@@ -106,7 +109,9 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-primary mb-4">
               Create your new custom component now
             </h2>
-            <PrimaryButton type="big">Get Started, It's Free</PrimaryButton>
+            <BigPrimaryButton type="big">
+              Get Started, It's Free
+            </BigPrimaryButton>
           </div>
         </div>
         <Footer />
