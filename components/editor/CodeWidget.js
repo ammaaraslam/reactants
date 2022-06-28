@@ -2,44 +2,9 @@ import { useState, useRef, useEffect } from "react";
 import { VscCode } from "react-icons/vsc";
 import { HiOutlineClipboardCopy } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
-// import SyntaxHighlighter from "react-syntax-highlighter";
-// import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
-const GetCode = ({ props }) => {
-  const [codeWidget, showCodeWidget] = useState(false);
-
-  const togglingCodeWidget = () => showCodeWidget(!codeWidget);
-
-  const ref = useRef();
-  // Detect Outside Click
-  useEffect(() => {
-    const checkIfClickedOutside = (e) => {
-      if ([codeWidget] && ref.current && !ref.current.contains(e.target)) {
-        // setBgOpen(false);
-        // setCBgOpen(false);
-        showCodeWidget(false);
-      }
-    };
-    document.addEventListener("mousedown", checkIfClickedOutside);
-    return () => {
-      document.removeEventListener("mousedown", checkIfClickedOutside);
-    };
-  }, [codeWidget]);
-  return (
-    <>
-      <button
-        type="button"
-        onClick={togglingCodeWidget}
-        className="absolute bottom-16 mt-5 p-2 bg-darkBackground dark:bg-background rounded-md text-2xl text-center text-primary hover:bg-primary dark:hover:bg-primary hover:rounded-lg hover:text-darkBackground dark:hover:text-background transition-all ease-in-out duration-150"
-      >
-        <VscCode />
-      </button>
-      {codeWidget && <CodeWidget props={props} />}
-    </>
-  );
-};
-
-export default GetCode;
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { nightOwl } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import Rnd from "react-rnd";
 
 const CodeWidget = ({ props }) => {
   const [codeInlineType, setCodeInlineType] = useState(true);
@@ -66,6 +31,25 @@ const CodeWidget = ({ props }) => {
                 lineHeight: "${props.lineHeight}",
                 backgroundColor: "${props.componentColor}",
                 color: "${props.componentContentColor}",
+                paddingLeft: "${props.paddingL}px",
+                paddingRight: "${props.paddingR}px",
+                fontSize: "${props.fontSize}px",
+                lineHeight: "${props.lineHeight}",
+                backgroundColor: "${props.componentColor}",
+                color: "${props.componentContentColor}",
+                paddingLeft: "${props.paddingL}px",
+                paddingRight: "${props.paddingR}px",
+                fontSize: "${props.fontSize}px",
+                lineHeight: "${props.lineHeight}",
+                backgroundColor: "${props.componentColor}",
+                color: "${props.componentContentColor}",
+                paddingLeft: "${props.paddingL}px",
+                paddingRight: "${props.paddingR}px",
+                fontSize: "${props.fontSize}px",
+                lineHeight: "${props.lineHeight}",
+                backgroundColor: "${props.componentColor}",
+                color: "${props.componentContentColor}",
+
               }}
             >
               Component
@@ -98,7 +82,7 @@ const CodeWidget = ({ props }) => {
   }, [codeInlineType, codeTailwindType, codeSCType]);
 
   return (
-    <div className="p-0 w-2/5 h-screen bg-background dark:bg-darkBackground fixed top-14 right-0 shadow-md rounded-md">
+    <div className="p-0 w-full h-1/2 pl-16 bg-background dark:bg-darkBackground shadow-md rounded-tl-lg">
       {/* <button
         type="button"
         onClick={(e) => {
@@ -109,8 +93,8 @@ const CodeWidget = ({ props }) => {
       >
         <IoMdClose />
       </button> */}
-      <div className="border-l-4 border-secondary h-full mt-2">
-        <div className="border-b-2 border-t-2  border-secondary w-full bg-darkBackground">
+      <div className="border-l-2 border-r-2 border-secondary rounded-tl-lg rounded-tr-lg h-full">
+        <div className="w-full bg-darkBackground border-t-2 border-b-2 border-secondary rounded-tl-lg rounded-tr-lg ">
           <button
             type="button"
             onClick={togglingCodeInlineType}
@@ -134,46 +118,30 @@ const CodeWidget = ({ props }) => {
           </button>
         </div>
         {codeInlineType && (
-          <div ref={ref}>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                navigator.clipboard.writeText(InlineCodeOutput);
-              }}
-              className="absolute right-4 mt-3 p-2 bg-background dark:bg-darkBackground rounded-md text-2xl text-center text-secondary hover:bg-secondary dark:hover:bg-secondary hover:rounded-lg hover:text-darkBackground dark:hover:text-background transition-all ease-in-out duration-150"
-            >
-              <HiOutlineClipboardCopy />
-            </button>
+          <div ref={ref} className="p-0 w-full h-full">
+            <CopyCodeButton codeToCopy={InlineCodeOutput} />
 
-            {/* <SyntaxHighlighter
+            <SyntaxHighlighter
               language="jsx"
               style={nightOwl}
               showLineNumbers="true"
               customStyle={{
                 backgroundColor: "#212738",
                 marginTop: "0",
+                height: "100%",
+                paddingBottom: "50px",
               }}
               wrapLongLines="true"
             >
               {InlineCodeOutput}
-            </SyntaxHighlighter> */}
+            </SyntaxHighlighter>
           </div>
         )}
         {codeTailwindType && (
           <div ref={ref}>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                navigator.clipboard.writeText(TailwindCodeOutput);
-              }}
-              className="absolute right-4 mt-3 p-2 bg-background dark:bg-darkBackground rounded-md text-2xl text-center text-secondary hover:bg-secondary dark:hover:bg-secondary hover:rounded-lg hover:text-darkBackground dark:hover:text-background transition-all ease-in-out duration-150"
-            >
-              <HiOutlineClipboardCopy />
-            </button>
+            <CopyCodeButton codeToCopy={TailwindCodeOutput} />
 
-            {/* <SyntaxHighlighter
+            <SyntaxHighlighter
               language="jsx"
               style={nightOwl}
               showLineNumbers="true"
@@ -184,23 +152,14 @@ const CodeWidget = ({ props }) => {
               wrapLongLines="true"
             >
               {TailwindCodeOutput}
-            </SyntaxHighlighter> */}
+            </SyntaxHighlighter>
           </div>
         )}
         {codeSCType && (
           <div ref={ref}>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                navigator.clipboard.writeText(ScCodeOutput);
-              }}
-              className="absolute right-4 mt-3 p-2 bg-background dark:bg-darkBackground rounded-md text-2xl text-center text-secondary hover:bg-secondary dark:hover:bg-secondary hover:rounded-lg hover:text-darkBackground dark:hover:text-background transition-all ease-in-out duration-150"
-            >
-              <HiOutlineClipboardCopy />
-            </button>
+            <CopyCodeButton codeToCopy={ScCodeOutput} />
 
-            {/* <SyntaxHighlighter
+            <SyntaxHighlighter
               language="jsx"
               style={nightOwl}
               showLineNumbers="true"
@@ -211,10 +170,29 @@ const CodeWidget = ({ props }) => {
               wrapLongLines="true"
             >
               {ScCodeOutput}
-            </SyntaxHighlighter> */}
+            </SyntaxHighlighter>
           </div>
         )}
       </div>
     </div>
+  );
+};
+
+export default CodeWidget;
+
+import React from "react";
+
+const CopyCodeButton = ({ codeToCopy }) => {
+  return (
+    <button
+      type="button"
+      onClick={(e) => {
+        e.preventDefault();
+        navigator.clipboard.writeText(codeToCopy);
+      }}
+      className="absolute right-6 mt-3 p-2 bg-background dark:bg-darkBackground rounded-md text-2xl text-center text-secondary hover:bg-secondary dark:hover:bg-secondary hover:rounded-lg hover:text-darkBackground dark:hover:text-background transition-all ease-in-out duration-150"
+    >
+      <HiOutlineClipboardCopy />
+    </button>
   );
 };

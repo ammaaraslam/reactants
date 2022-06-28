@@ -8,8 +8,8 @@ import ContentSizeSettings from "./settings/ContentSizeSettings";
 import Popout from "./Popout";
 import ComponentColorSettings from "./settings/ComponentColor";
 import ComponentContentColorSettings from "./settings/ComponentContentColor";
-import GetCode from "./GetCode";
 import BorderSettings from "./settings/BorderSettings";
+import { VscCode } from "react-icons/vsc";
 
 const SideBar = ({ props }) => {
   const [sizeSettings, showSizeSettings] = useState(false);
@@ -65,7 +65,7 @@ const SideBar = ({ props }) => {
   ]);
 
   return (
-    <div className="absolute top-0 p-3 h-screen w-fit bg-background dark:bg-darkBackground shadow-md items-center justify-between font-roboto">
+    <div className="absolute top-0 p-3 z-40 h-screen w-fit bg-background dark:bg-darkBackground shadow-md items-center justify-between font-roboto">
       <div className="mt-16 flex flex-col">
         <SideBarButton handleOnClick={togglingSizeSettings}>
           <TbResize />
@@ -109,7 +109,10 @@ const SideBar = ({ props }) => {
         )}
       </div>
       <div className="absolute bottom-5 flex flex-col">
-        <GetCode props={props} />
+        <SideBarButton handleOnClick={props.togglingCodeWidget}>
+          <VscCode />
+        </SideBarButton>
+
         <SideBarButton>
           <BiExit className="rotate-180" />
         </SideBarButton>
