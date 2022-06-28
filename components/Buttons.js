@@ -13,8 +13,6 @@ export const BigPrimaryButton = ({ handleOnClick, children }) => {
 export const SmallSecondaryButton = ({
   handleOnClick,
   children,
-  type,
-  textColor,
 }) => {
   return (
     <button

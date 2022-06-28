@@ -17,7 +17,7 @@ const Header = () => {
   };
   const [navActive, setNavActive] = useState(false);
   const listenScrollEvent = () => {
-    window.scrollY > 13 ? setNavActive(true) : setNavActive(false);
+    window.scrollY > 50 ? setNavActive(true) : setNavActive(false);
   };
   useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent);
@@ -29,15 +29,15 @@ const Header = () => {
   return (
     <>
       {navActive && (
-        <header className="fixed p-3 w-full h-fit flex items-center justify-between bg-background dark:bg-darkBackground bg-opacity-50 dark:bg-opacity-80 backdrop-blur-lg backdrop-saturate-150 text-darkText dark:text-text">
+        <header className="fixed p-3  w-full h-fit flex items-center justify-between bg-background dark:bg-darkBackground bg-opacity-50 dark:bg-opacity-80 backdrop-blur-lg backdrop-saturate-150 text-darkText dark:text-text">
           <div className="p-0 ml-8 text-center inline-flex items-center justify-center">
             <span className="text-2xl font-bold">Reactants</span>
           </div>
           <div className="inline-flex font-normal text-xl font-roboto tracking-wider">
-            <li className="list-none mr-8 text-greyText hover:text-darkText dark:hover:text-text transition-all duration-200">
+            <li className="list-none mr-8 text-darkBackground dark:text-background opacity-80 hover:opacity-100 transition-all duration-200">
               <Link href="/">Contribute</Link>
             </li>
-            <li className="list-none text-greyText hover:text-darkText dark:hover:text-text transition-all duration-200">
+            <li className="list-none text-darkBackground dark:text-background opacity-80 hover:opacity-100 transition-all duration-200">
               <Link href="/">About</Link>
             </li>
           </div>
@@ -60,7 +60,7 @@ const Header = () => {
         </header>
       )}
       {!navActive && (
-        <header className="fixed p-3 w-full h-fit flex items-center justify-between bg-background dark:bg-darkBackground  text-darkText dark:text-text">
+        <header className="fixed p-3 py-6 w-full h-fit flex items-center justify-between bg-background dark:bg-darkBackground  text-darkText dark:text-text">
           <div className="p-0 ml-8 text-center inline-flex items-center justify-center">
             <span className="text-2xl font-bold">Reactants</span>
           </div>
@@ -68,7 +68,7 @@ const Header = () => {
             <li className="list-none mr-8 text-darkBackground dark:text-background opacity-80 hover:opacity-100 transition-all duration-200">
               <Link href="/">Contribute</Link>
             </li>
-            <li className="list-none mr-8 text-darkBackground dark:text-background opacity-80 hover:opacity-100 transition-all duration-200">
+            <li className="list-none text-darkBackground dark:text-background opacity-80 hover:opacity-100 transition-all duration-200">
               <Link href="/">About</Link>
             </li>
           </div>

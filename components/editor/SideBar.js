@@ -50,6 +50,7 @@ const SideBar = ({ props }) => {
         showContentSizeSettings(false);
         showComponentColorSettings(false);
         showComponentContentColorSettings(false);
+        showBorderSettings(false);
       }
     };
     document.addEventListener("mousedown", checkIfClickedOutside);
@@ -67,7 +68,10 @@ const SideBar = ({ props }) => {
   return (
     <div className="absolute top-0 p-3 z-40 h-screen w-fit bg-background dark:bg-darkBackground shadow-md items-center justify-between font-roboto">
       <div className="mt-16 flex flex-col">
-        <SideBarButton handleOnClick={togglingSizeSettings}>
+        <SideBarButton
+          handleOnClick={togglingSizeSettings}
+          active={sizeSettings}
+        >
           <TbResize />
         </SideBarButton>
         {sizeSettings && (
@@ -75,7 +79,10 @@ const SideBar = ({ props }) => {
             <SizeSettings props={props} />
           </Popout>
         )}
-        <SideBarButton handleOnClick={togglingContentSizeSettings}>
+        <SideBarButton
+          handleOnClick={togglingContentSizeSettings}
+          active={contentSizeSettings}
+        >
           <IoTextSharp />
         </SideBarButton>
         {contentSizeSettings && (
@@ -83,7 +90,10 @@ const SideBar = ({ props }) => {
             <ContentSizeSettings props={props} />
           </Popout>
         )}
-        <SideBarButton handleOnClick={togglingComponentColorSettings}>
+        <SideBarButton
+          handleOnClick={togglingComponentColorSettings}
+          active={componentColorSettings}
+        >
           <AiOutlineBgColors />
         </SideBarButton>
         {componentColorSettings && (
@@ -91,7 +101,10 @@ const SideBar = ({ props }) => {
             <ComponentColorSettings props={props} />
           </Popout>
         )}
-        <SideBarButton handleOnClick={togglingComponentContentColorSettings}>
+        <SideBarButton
+          handleOnClick={togglingComponentContentColorSettings}
+          active={componentContentColorSettings}
+        >
           <AiOutlineFontColors />
         </SideBarButton>
         {componentContentColorSettings && (
@@ -99,7 +112,10 @@ const SideBar = ({ props }) => {
             <ComponentContentColorSettings props={props} />
           </Popout>
         )}
-        <SideBarButton handleOnClick={togglingBorderSettings}>
+        <SideBarButton
+          handleOnClick={togglingBorderSettings}
+          active={borderSettings}
+        >
           <TbBorderAll />
         </SideBarButton>
         {borderSettings && (
@@ -109,11 +125,14 @@ const SideBar = ({ props }) => {
         )}
       </div>
       <div className="absolute bottom-5 flex flex-col">
-        <SideBarButton handleOnClick={props.togglingCodeWidget}>
+        <SideBarButton
+          handleOnClick={props.togglingCodeWidget}
+          active={props.codeWidget}
+        >
           <VscCode />
         </SideBarButton>
 
-        <SideBarButton>
+        <SideBarButton active={true}>
           <BiExit className="rotate-180" />
         </SideBarButton>
       </div>
@@ -123,13 +142,26 @@ const SideBar = ({ props }) => {
 
 export default SideBar;
 
-const SideBarButton = ({ children, handleOnClick }) => {
+const SideBarButton = ({ children, handleOnClick, active }) => {
+  if (active) {
+    return (
+      <>
+        <button
+          type="button"
+          onClick={handleOnClick}
+          className="mt-5 p-2 text-darkBackground dark:text-background rounded-md text-2xl text-center transition-all ease-in-out duration-150  bg-primary"
+        >
+          {children}
+        </button>
+      </>
+    );
+  }
   return (
     <>
       <button
         type="button"
         onClick={handleOnClick}
-        className="mt-5 p-2 bg-darkBackground dark:bg-background rounded-md text-2xl text-center text-primary hover:bg-primary dark:hover:bg-primary hover:rounded-lg hover:text-darkBackground dark:hover:text-background transition-all ease-in-out duration-150"
+        className="mt-5 p-2 text-darkBackground dark:text-background rounded-md text-2xl text-center transition-all ease-in-out duration-150  hover:bg-darkBackground dark:hover:bg-background hover:bg-opacity-20 dark:hover:bg-opacity-20"
       >
         {children}
       </button>

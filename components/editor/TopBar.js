@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PrimaryOutlineButton } from "../Buttons";
+import { SmallSecondaryButton } from "../Buttons";
 
 const TopBar = () => {
   return (
@@ -9,9 +9,9 @@ const TopBar = () => {
       </div>
       <div className="text-darkText dark:text-text">Untitled</div>
       <div className="mr-8">
-        <PrimaryOutlineButton type="small" textColor="background">
+        <SmallSecondaryButton type="small" textColor="background">
           Save
-        </PrimaryOutlineButton>
+        </SmallSecondaryButton>
       </div>
     </div>
   );

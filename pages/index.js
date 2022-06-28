@@ -25,14 +25,14 @@ export default function Home() {
       <Header />
       <main className="w-full h-full bg-background dark:bg-darkBackground">
         <div className="pt-44 flex">
-          <div className="ml-auto mr-auto max-w-4xl text-center">
-            <h1 className="text-textDark dark:text-text font-bold text-8xl tracking-wider font-display">
+          <div className="ml-auto mr-auto max-w-3xl text-center">
+            <h1 className="p-2 text-textDark dark:text-text font-bold text-7xl tracking-wider font-display">
               Build your React components{" "}
-              <span className="italic font-semibold text-transparent  bg-clip-text bg-gradient-to-r from-[#0061ff] to-[#60efff]">
-                /*without code*/
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0061ff] to-[#60efff] opacity-90">
+                without code
               </span>
             </h1>
-            <p className="text-darkText dark:text-text font-semibold text-3xl mt-2 max-w-3xl ml-auto mr-auto font-roboto">
+            <p className="text-darkText dark:text-text font-semibold text-3xl mt-2 max-w-3xl ml-auto mr-auto font-roboto opacity-80">
               An open-source, no-code platform to create beautiful custom
               ReactJS UI components
             </p>
