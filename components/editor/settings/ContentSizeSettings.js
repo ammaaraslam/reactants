@@ -11,6 +11,7 @@ const ContentSizeSettings = ({ props }) => {
             min="1"
             max="1200"
             label="Font Size"
+            defaultValue={props.fontSize}
             handleOnChange={(e) => {
               props.setFontSize(e.target.value);
             }}
@@ -19,6 +20,8 @@ const ContentSizeSettings = ({ props }) => {
             label="Line Height"
             min="1"
             max="750"
+            step="0.1"
+            defaultValue={props.lineHeight}
             handleOnChange={(e) => {
               props.setLineHeight(e.target.value);
             }}

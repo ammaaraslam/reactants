@@ -8,6 +8,7 @@ const IncrementalInput = ({
   max,
   min,
   defaultValue,
+  step,
 }) => {
   return (
     <form
@@ -23,6 +24,7 @@ const IncrementalInput = ({
         max={max}
         value={defaultValue}
         onChange={handleOnChange}
+        step={step}
         className="ml-2 w-12 h-6 rounded-sm bg-secondary text-darkBackground dark:text-background text-right"
       />
     </form>
