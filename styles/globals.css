@@ -14,3 +14,21 @@
   background: #6b6b6b;
   border-radius: 10px;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+select:focus,
+optio:focus,
+textarea:focus,
+input:focus {
+  outline: none;
+}
