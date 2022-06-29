@@ -1,5 +1,5 @@
 import { TbResize, TbBorderAll } from "react-icons/tb";
-import { IoTextSharp } from "react-icons/io5";
+import { IoTextSharp, IoAddSharp } from "react-icons/io5";
 import { AiOutlineBgColors, AiOutlineFontColors } from "react-icons/ai";
 import { BiExit } from "react-icons/bi";
 import { useEffect, useRef, useState } from "react";
@@ -10,6 +10,7 @@ import ComponentColorSettings from "./settings/ComponentColor";
 import ComponentContentColorSettings from "./settings/ComponentContentColor";
 import BorderSettings from "./settings/BorderSettings";
 import { VscCode } from "react-icons/vsc";
+import AddElement from "./settings/AddElement";
 
 const SideBar = ({ props }) => {
   const [sizeSettings, showSizeSettings] = useState(false);
@@ -18,9 +19,11 @@ const SideBar = ({ props }) => {
   const [componentContentColorSettings, showComponentContentColorSettings] =
     useState(false);
   const [borderSettings, showBorderSettings] = useState(false);
+  const [addElement, showAddElement] = useState(false);
 
   const togglingSizeSettings = () => showSizeSettings(!sizeSettings);
   const togglingBorderSettings = () => showBorderSettings(!borderSettings);
+  const togglingAddComponent = () => showAddElement(!addElement);
 
   const togglingContentSizeSettings = () =>
     showContentSizeSettings(!contentSizeSettings);
@@ -40,6 +43,7 @@ const SideBar = ({ props }) => {
           componentColorSettings,
           componentContentColorSettings,
           borderSettings,
+          addElement,
         ] &&
         ref.current &&
         !ref.current.contains(e.target)
@@ -51,6 +55,7 @@ const SideBar = ({ props }) => {
         showComponentColorSettings(false);
         showComponentContentColorSettings(false);
         showBorderSettings(false);
+        showAddElement(false);
       }
     };
     document.addEventListener("mousedown", checkIfClickedOutside);
@@ -63,11 +68,21 @@ const SideBar = ({ props }) => {
     componentColorSettings,
     componentContentColorSettings,
     borderSettings,
+    addElement,
   ]);
 
   return (
     <div className="absolute top-0 p-3 z-40 h-screen w-fit bg-background dark:bg-darkBackground shadow-md items-center justify-between font-roboto">
       <div className="mt-16 flex flex-col">
+        <SideBarButton handleOnClick={togglingAddComponent} active={addElement}>
+          <IoAddSharp />
+        </SideBarButton>
+        {addElement && (
+          <Popout useRef={ref}>
+            <AddElement props={props} />
+          </Popout>
+        )}
+
         <SideBarButton
           handleOnClick={togglingSizeSettings}
           active={sizeSettings}

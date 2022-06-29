@@ -13,6 +13,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      minWidth: {
+        4: "4.5rem",
+        5: "5.3rem",
+        6: "7.2rem",
+      },
+      maxWidth: {
+        5: "5.3rem",
+        6: "10rem",
+      },
+
       backgroundSize: {
         canvas: "30px 30px",
       },

@@ -24,9 +24,9 @@ const styleOptions = [
 
 const BorderSettings = ({ props }) => {
   return (
-    <div className="text-background dark:text-darkBackground w-80">
+    <div className="text-darkBackground dark:text-background w-80">
       <div>
-        <h2 className="text-primary font-bold text-lg">Border</h2>
+        <h2 className="font-bold text-lg">Border</h2>
         <hr />
         <div className="flex justify-between mt-2">
           <IncrementalInput
@@ -48,7 +48,7 @@ const BorderSettings = ({ props }) => {
         </div>
       </div>
       <div>
-        <h2 className="text-primary font-bold text-lg mt-5">Border Radius</h2>
+        <h2 className="font-bold text-lg mt-5">Border Radius</h2>
         <hr />
         <div className="flex justify-between mt-2">
           <IncrementalInput

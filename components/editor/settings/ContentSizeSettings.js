@@ -2,9 +2,9 @@ import IncrementalInput from "./Inputs";
 
 const ContentSizeSettings = ({ props }) => {
   return (
-    <div className="text-background dark:text-darkBackground w-72">
+    <div className="text-darkBackground dark:text-background w-72">
       <div>
-        <h2 className="text-primary font-bold text-lg">Size</h2>
+        <h2 className="font-bold text-lg">Size</h2>
         <hr />
         <div className="flex justify-between mt-2">
           <IncrementalInput
