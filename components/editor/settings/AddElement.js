@@ -7,15 +7,15 @@ const AddElement = ({ props }) => {
         <h2 className="font-bold text-lg">Add Elements</h2>
         <hr />
         <div className="flex flex-wrap justify-start ml-auto mr-auto overflow-auto whitespace-nowrap items-center h-9/10 mt-1 py-2 font-roboto">
-          <AddElementButton>
+          <AddElementButton handleOnClick={props.addTextElement}>
             <BsTextareaT className="ml-auto mr-auto" />
             <p className="text-sm text-center opacity-80">Text</p>
           </AddElementButton>
-          <AddElementButton>
+          <AddElementButton handleOnClick={props.addRectangleElement}>
             <BsBoundingBoxCircles className="ml-auto mr-auto" />
             <p className="text-sm text-center opacity-80">Rectangle</p>
           </AddElementButton>
-          <AddElementButton>
+          <AddElementButton handleOnClick={props.addIconElement}>
             <TbIcons className="ml-auto mr-auto" />
             <p className="text-sm text-center opacity-80">Icon</p>
           </AddElementButton>

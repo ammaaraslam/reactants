@@ -147,7 +147,7 @@ const SideBar = ({ props }) => {
           <VscCode />
         </SideBarButton>
 
-        <SideBarButton active={true}>
+        <SideBarButton active={false}>
           <BiExit className="rotate-180" />
         </SideBarButton>
       </div>

@@ -4,6 +4,11 @@ import Canvas from "../components/editor/Canvas";
 import CodeWidget from "../components/editor/CodeWidget";
 import SideBar from "../components/editor/SideBar";
 import TopBar from "../components/editor/TopBar";
+import Component, {
+  IconElement,
+  RectangleElement,
+  TextElement,
+} from "../components/editor/Component";
 
 export default function Editor() {
   const [width, setWidth] = useState("250");
@@ -23,11 +28,44 @@ export default function Editor() {
   const [borderBottomLeft, setBorderBottomLeft] = useState("10");
   const [borderBottomRight, setBorderBottomRight] = useState("10");
   const [codeWidget, showCodeWidget] = useState(false);
+  const [elements, setElements] = useState([
+    <TextElement removeElement={removeElement} />,
+    <RectangleElement removeElement={removeElement} />,
+  ]);
+  const addTextElement = () => {
+    const newElement = [
+      ...elements,
+      <TextElement removeElement={removeElement} />,
+    ];
+    setElements(newElement);
+  };
+  const addRectangleElement = () => {
+    const newElement = [
+      ...elements,
+      <RectangleElement removeElement={removeElement} />,
+    ];
+    setElements(newElement);
+  };
+  const addIconElement = () => {
+    const newElement = [
+      ...elements,
+      <IconElement removeElement={removeElement} />,
+    ];
+    setElements(newElement);
+  };
+
+  const removeElement = (index) => {
+    const newTasks = [...elements];
+    newTasks.splice(index, 1);
+    setElements(newTasks);
+  };
 
   const togglingCodeWidget = () => showCodeWidget(!codeWidget);
 
   const propsForSettings = {
     width,
+    removeElement,
+    addIconElement,
     setWidth,
     height,
     setHeight,
@@ -61,7 +99,11 @@ export default function Editor() {
     setBorderBottomRight,
     codeWidget,
     showCodeWidget,
+    addRectangleElement,
     togglingCodeWidget,
+    elements,
+    setElements,
+    addTextElement,
   };
 
   return (
