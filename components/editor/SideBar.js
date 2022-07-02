@@ -74,14 +74,14 @@ const SideBar = ({ props }) => {
   return (
     <div className="absolute top-0 p-3 z-40 h-screen w-fit bg-background dark:bg-darkBackground shadow-md items-center justify-between font-roboto">
       <div className="mt-16 flex flex-col">
-        <SideBarButton handleOnClick={togglingAddComponent} active={addElement}>
+        {/* <SideBarButton handleOnClick={togglingAddComponent} active={addElement}>
           <IoAddSharp />
         </SideBarButton>
         {addElement && (
           <Popout useRef={ref}>
             <AddElement props={props} />
           </Popout>
-        )}
+        )} */}
 
         <SideBarButton
           handleOnClick={togglingSizeSettings}

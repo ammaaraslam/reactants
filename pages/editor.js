@@ -28,29 +28,24 @@ export default function Editor() {
   const [borderBottomLeft, setBorderBottomLeft] = useState("10");
   const [borderBottomRight, setBorderBottomRight] = useState("10");
   const [codeWidget, showCodeWidget] = useState(false);
+
   const [elements, setElements] = useState([
-    <TextElement removeElement={removeElement} />,
-    <RectangleElement removeElement={removeElement} />,
+    <TextElement />,
+    <RectangleElement />,
   ]);
+  const [elementsStyle, setElementsStyle] = useState([
+    
+  ])
   const addTextElement = () => {
-    const newElement = [
-      ...elements,
-      <TextElement removeElement={removeElement} />,
-    ];
+    const newElement = [...elements, <TextElement />];
     setElements(newElement);
   };
   const addRectangleElement = () => {
-    const newElement = [
-      ...elements,
-      <RectangleElement removeElement={removeElement} />,
-    ];
+    const newElement = [...elements, <RectangleElement />];
     setElements(newElement);
   };
   const addIconElement = () => {
-    const newElement = [
-      ...elements,
-      <IconElement removeElement={removeElement} />,
-    ];
+    const newElement = [...elements, <IconElement />];
     setElements(newElement);
   };
 
@@ -103,6 +98,7 @@ export default function Editor() {
     togglingCodeWidget,
     elements,
     setElements,
+    elementsStyle, setElementsStyle,
     addTextElement,
   };
 

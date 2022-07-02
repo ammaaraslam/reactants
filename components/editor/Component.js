@@ -43,10 +43,11 @@ export const Element = ({ children, removeElement, id }) => {
 
   if (hover) {
     return (
-      <Draggable>
+      <Draggable bounds="parent">
         <div
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
+          onClick={console.log(children + id)}
           className="p-3 outline outline-2 outline-darkBackground dark:outline-background rounded-md"
         >
           <IoTrashBin
@@ -58,9 +59,11 @@ export const Element = ({ children, removeElement, id }) => {
       </Draggable>
     );
   }
+
   return (
-    <Draggable>
+    <Draggable bounds="parent">
       <div
+        onClick={console.log(children + id)}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
         className="p-3 border-darkBackground dark:border-background rounded-md"
@@ -73,14 +76,67 @@ export const Element = ({ children, removeElement, id }) => {
 
 export default Component;
 
-export const TextElement = () => {
-  return <p>text element</p>;
+export const TextElement = ({ props }) => {
+  return (
+    <p
+      style={{
+        paddingTop: `${props.paddingT}px`,
+        paddingBottom: `${props.paddingB}px`,
+        paddingLeft: `${props.paddingL}px`,
+        paddingRight: `${props.paddingR}px`,
+        fontSize: `${props.fontSize}px`,
+        lineHeight: `${props.lineHeight}`,
+        backgroundColor: `${props.componentColor}`,
+        color: `${props.componentContentColor}`,
+        borderWidth: `${props.borderThickness}px`,
+        borderStyle: `${props.borderStyle}`,
+        borderTopLeftRadius: `${props.borderTopLeft}px`,
+        borderTopRightRadius: `${props.borderTopRight}px`,
+        borderBottomLeftRadius: `${props.borderBottomLeft}px`,
+        borderBottomRightRadius: `${props.borderBottomRight}px`,
+      }}
+    >
+      text element
+    </p>
+  );
 };
 
-export const RectangleElement = () => {
-  return <p>text element</p>;
+export const RectangleElement = ({ props }) => {
+  return (
+    <div
+      className="text-center flex justify-center"
+      style={{
+        width: `${props.width}px`,
+        height: `${props.height}px`,
+        paddingTop: `${props.paddingT}px`,
+        paddingBottom: `${props.paddingB}px`,
+        paddingLeft: `${props.paddingL}px`,
+        paddingRight: `${props.paddingR}px`,
+        fontSize: `${props.fontSize}px`,
+        lineHeight: `${props.lineHeight}`,
+        backgroundColor: `${props.componentColor}`,
+        color: `${props.componentContentColor}`,
+        borderWidth: `${props.borderThickness}px`,
+        borderStyle: `${props.borderStyle}`,
+        borderTopLeftRadius: `${props.borderTopLeft}px`,
+        borderTopRightRadius: `${props.borderTopRight}px`,
+        borderBottomLeftRadius: `${props.borderBottomLeft}px`,
+        borderBottomRightRadius: `${props.borderBottomRight}px`,
+      }}
+    >
+      Component
+    </div>
+  );
 };
 
 export const IconElement = () => {
-  return <p>text element</p>;
+  return <p>icon element</p>;
+};
+
+export const ComponentFrame = ({ children }) => {
+  return (
+    <div className="relative w-fit h-fit p-5 flex justify-center items-center bg-primary">
+      {children}
+    </div>
+  );
 };
